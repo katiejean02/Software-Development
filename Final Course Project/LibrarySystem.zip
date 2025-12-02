@@ -1,0 +1,278 @@
+/*
+ Katie Prohaska
+ Date: 11/15/2024
+ */
+import java.util.Scanner;
+
+public class LibrarySystem {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+
+		System.out.println("What action would you like to take today?");
+		System.out.println("1) Add librarian/Edit account");
+		System.out.println("2) New membership/Edit account");
+		System.out.println("3) Book/Genre look up");
+		int answer = input.nextInt();
+
+		if(answer == 1) {
+				addLibrarian();
+			}
+		if(answer == 2) {
+			addMembership();
+			}
+		if(answer == 3) {
+			bookLookup();
+			}
+	}
+
+	public static void addLibrarian() {
+		Scanner input = new Scanner(System.in);
+
+		String[] librarian = new String[5];
+		
+		System.out.println("IF YOU ARE EDITING AN ACCOUNT ENTER ALL YOUR INFORMATION BELOW");
+		
+		System.out.println("Enter name of new librarian!");
+		System.out.println("Enter phone number: ");
+		System.out.println("Enter address: ");
+		System.out.println("Enter credentials: ");
+
+		for(int i = 0; i < librarian.length; i++) {
+			librarian[i] = input.nextLine();
+		}
+		for(int j = 0; j < librarian.length; j++) {
+			System.out.println(librarian[j] + " ");
+		}
+		
+		System.out.println("Is this information correct?(0 for yes 1 for no)");
+			int answer = input.nextInt();
+
+		if(answer == 0) {
+			System.out.println("Yay! You have completed adding a new librarian!");
+		}
+		if(answer == 1) {
+			System.out.println("What information is incorrect?");
+			System.out.println("1) Name");
+			System.out.println("2) Phone number");
+			System.out.println("3) Address");
+			System.out.println("4) Credentials");
+			int edit = input.nextInt();
+			
+			if(edit == 1) {
+				System.out.println("Enter new name: ");
+				librarian[0] = input.next();
+				
+				for(int h = 0; h < librarian.length; h++) {
+					System.out.println(librarian[h] + " ");
+				}
+				System.out.println("Yay! You have completed editing your account!");
+			}
+			if(edit == 2) {
+				System.out.println("Enter new phone number: ");
+				librarian[1] = input.next();
+				
+				for(int g = 0; g < librarian.length; g++) {
+					System.out.println(librarian[g] + " ");
+				}
+				System.out.println("Yay! You have completed editing your account!");
+			}
+			if(edit == 3) {
+				System.out.println("Enter new address: ");
+				librarian[2] = input.next();
+				
+				for(int y = 0; y < librarian.length; y++) {
+					System.out.println(librarian[y] + " ");
+				}
+				System.out.println("Yay! You have completed editing your account!");
+			}
+			if(edit == 4) {
+				System.out.println("Enter new credentials: ");
+				librarian[3] = input.next();
+				
+				for(int t = 0; t < librarian.length; t++) {
+					System.out.println(librarian[t] + " ");
+				}
+				System.out.println("Yay! You have completed editing your account!");
+			}
+		}
+		
+			System.out.println("Is there anything else you'd like to complete?(0 for yes 1 for no)");
+			int more = input.nextInt();
+
+		if(more == 0) {
+			prompt();
+		}
+		if(more == 1) {
+			System.out.println("You have chosen to exit the program. Have a good day!");
+		}
+		}
+	
+	public static void addMembership() {
+		Scanner input = new Scanner(System.in);
+
+		String[] membership = new String[4];
+		System.out.println("IF YOU ARE EDITING AN ACCOUNT ENTER ALL YOUR INFORMATION BELOW");
+
+		System.out.println("Enter your first name: ");
+		System.out.println("Enter your birthdate: ");
+		System.out.println("Enter your contact information (email or phone number): ");
+		System.out.println("Enter your address(with no spaces): ");
+
+		for(int i = 0; i < membership.length; i++) {
+			membership[i] = input.nextLine();
+		}
+		for(int j = 0; j < membership.length; j++) {
+			System.out.println(membership[j] + " ");
+			}
+			System.out.println("Is this information correct?(0 for yes 1 for no)");
+				int info = input.nextInt();
+
+				if(info == 0) {
+					System.out.println("Yay! You have completed adding a new membership!");
+				}
+
+				if(info == 1) {
+					System.out.println("What information isn't correct?");
+					System.out.println("1) Name");
+					System.out.println("2) Birthdate");
+					System.out.println("3) Contact Information");
+					System.out.println("4) Address");
+					int change = input.nextInt();
+					
+					if(change == 1) {
+						System.out.println("Enter new name: ");
+						membership[0] = input.next();
+						
+						for(int l = 0; l < membership.length; l++) {
+							System.out.println(membership[l] + " ");
+						}
+					}
+					if(change == 2) {
+							System.out.println("Enter new bithdate: ");
+							membership[1] = input.next();
+							
+							for(int m = 0; m < membership.length; m++) {
+								System.out.println(membership[m] + " ");
+							}
+						}
+						if(change == 3) {
+							System.out.println("Enter new contact information: ");
+							membership[2] = input.next();
+							
+							for(int n = 0; n < membership.length; n++) {
+								System.out.println(membership[n] + " ");
+							}
+						}
+						if(change == 4) {
+							System.out.println("Enter a new address (with no spaces): ");
+							membership[3] = input.next();
+							
+							for(int a = 0; a < membership.length; a++) {
+								System.out.println(membership[a] + " ");
+							}
+						}
+						System.out.println("Yay! You have successfully edited your account!");
+					
+						
+						}
+		System.out.println("Is there any other action you would like to take today?(0 for yes 1 to quit the program)");
+		int option = input.nextInt();
+		if(option == 0) {
+			prompt();
+		}
+		if(option == 1) {
+			System.out.println("You have chose to exit the program. Have a good day!");
+	}
+	}
+	public static void bookLookup() {
+		Scanner input = new Scanner(System.in);
+		
+		String[] books = new String[4];
+		books[0] = "God of Fury";
+		books[1] = "Binding 13";
+		books[2] = "The Deal";
+		books[3] = "The Risk";
+
+		String[] location = new String[4];
+		location[0] = "Aisle A1";
+		location[1] = "Aisle C1";
+		location[2] = "Aisle E1";
+		location[3] = "Aisle S1";
+		
+		String[] author = new String[4];
+		author[0] = "Rina Kent";
+		author[1] = "Chloe Walsh";
+		author[2] = "Elle Kennedy";
+		author[3] = "S.T. Abby";
+		
+		String[] genre = new String[4];
+		genre[0] = "Dark Romance";
+		genre[1] = "Comtemporary Romance";
+		genre[2] = "Cometemporary Romance";
+		genre[3] = "Thriller Romance";
+
+		System.out.println("How would you like to conduct your search?");
+		System.out.println("1) Author");
+		System.out.println("2) Genre");
+		System.out.println("3) Book title");
+		int answer = input.nextInt();
+
+		if(answer == 1) {
+		System.out.println("Enter the first name of the author: ");
+			String name = input.next();
+			for(int i = 0; i < author.length; i++) {
+				if(author[i].contains(name)) {
+					System.out.println("Sweet! It looks like we do have work from that author! You can find them on " + location[i]);
+				}
+			}
+		}
+		else if(answer == 2) {			
+			System.out.println("Enter the genre: ");
+			String name1 = input.next();				
+			for(int i = 0; i < genre.length; i++) {
+				if(genre[i].contains(name1)) {
+					System.out.println("Sweet! It looks like we do have books of that genre! You can find them on " + location[i]);
+				}
+			}
+			}
+		else if(answer == 3) {			
+			System.out.println("Enter the book title: ");
+			String name2 = input.next();			
+			for(int i = 0; i < books.length; i++) {
+				if(books[i].contains(name2)) {
+					System.out.println("Sweet! It looks like we have that book! You can find it on " + location[i]);
+			}
+			}
+		}
+		System.out.println("Is there anything else you would like to complete today?(0 for yes 1 to quit the program)");
+		int option = input.nextInt();
+
+			if(option == 0) {
+				prompt();
+			}
+			if(option == 1) {
+				System.out.println("You have chosen to exit the program. Have a good day!");
+		}
+	}
+
+	public static void prompt() {
+		Scanner input = new Scanner(System.in);
+
+		System.out.println("What action would you like to take today?");
+		System.out.println("1) Add librarian/Edit Account");
+		System.out.println("2) New membership/Edit Account");
+		System.out.println("3) Book/Genre look up");
+		int answer = input.nextInt();
+
+		if(answer == 1) {
+			addLibrarian();
+		}
+		if(answer == 2) {
+			addMembership();
+		}
+
+		if(answer == 3) {
+			bookLookup();
+		}
+	}
+	}
